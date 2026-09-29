@@ -1,0 +1,6 @@
+{
+  "name": "Marinho Acessórios - Peças para Carros Antigos",
+  "description": "E-commerce de peças, acabamentos e acessórios para restauração de clássicos nacionais (Chevette, Opala, Fusca, Gol Quadrado e outros). Loja Oficial e atendimento técnico especializado em Cascavel - PR.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
