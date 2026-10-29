@@ -4,24 +4,24 @@ import { Camera, ArrowRight, Store, MapPin, Phone, Clock, Navigation, Heart, Che
 export const InstagramAndLocation: React.FC = () => {
   const instagramPosts = [
     {
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDgPsP-c6E963PtBkq2uvk79NetmdKDvztOZAyyM5LadUP9N_q0vFjON5i8_vvKqCHMk5BtiUAxkLr_kbYrhSV4-sGqTeiukMSfAnEgHWBvT0U6RwT4nYWfspa-w-YR2ExtPLz8pD2clg59eIqc_aNDnVwEoJfp_Q45HSvoxHFdSJ6qQnt8dxmiE18GsnyqptNWPQRMFTJ_liuXkFyvemJScPILNi1r5rT4EwwGtravUk8LhEjLGJI',
-      title: 'Projeto Chevette SL Tubarão finalizado com sucesso!',
-      tag: '#ChevetteTubarão #Restauração',
+      image: '/assets/aistudio/frente-loja.png',
+      title: 'Fachada da nossa loja em Cascavel - PR com Chevettes de clientes e amigos!',
+      tag: '#MarinhoAcessorios #CascavelPR #Chevettes',
     },
     {
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5cBtAylDJ7SgkjfB2OMh1Zbd3kFvvpSygR2JmvKeTkHZCuLwJLdn-E964-0xCgH_q7rN9V68bbC4XDJ98-XBrG2SydmP7MuHkw8rUz2sQMr3BEBvCvJ3h5_oYOpCC_iMdrBtE8CV9Ld_Koo6GjfzPoy_3PukOsFZ20Ib8QrxC6P7wGzIZGRkaBeiFBRnlKjKatEXoPASoCWowOKz4g0N5shCLh7dLQFdki1N5jc-5gLv7xt8TnqU',
-      title: 'Novo lote de borrachas e canaletas originais no estoque.',
-      tag: '#EstoqueAtivo #ProntaEntrega',
+      image: '/assets/aistudio/chevettao.png',
+      title: 'Chevette DL Street/Arrancada montado com nossos acessórios e acabamentos.',
+      tag: '#ChevetteDL #Arrancada #ClassicosGM',
     },
     {
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDyz38XyYtZF2yyzoEpI9kofRQxeFkq9PZ3VgefENicz2tU1sIE2wqkp7B-2m--tlB5kgudr1Yv8cJR1xh_UfFKH6p0_L_eyeGu_McNF2v16M77tPlZ7dOPnaFsySWVQuyJh9RYwikZjs6MQMAyQ4E41quEZAUrrKOGiYG_W7qSSwAYTvMlCY2jqvt-RP9VM9xieWYvvltXLkCY_jC6-C2jK__SP4766XfTjWQXIXrV2sWQTCeu1O8',
-      title: 'Linha Quadrada VW: frisos e emblemas 100% instalados.',
-      tag: '#GolGTS #GolGTI #Quadrados',
+      image: '/assets/aistudio/carrao2.png',
+      title: 'Karmann Ghia e Fusca clássicos em exposição com acabamento impecável.',
+      tag: '#KarmannGhia #Aircooled #EncontroDeAntigos',
     },
     {
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDKn7abZLcSLgrMMw4bUbxV-bmXWWQH3xaAQthCjtAra-auM4SXf3rawjUJa-Uv-bCgXFd36MB-Zva7v6Fz6rKjsinhwTLXetl6mwb3zNSxX3JdQe0sCy8c-Dbk0S-b8LsXxVm0ZcgUwqfhXyz5aM-XWRGiQVqmznkipbdLeP62GxBEC9qXTt2p58fVvRf_Oh9GYFl7XgJeM9rFA4Riy7GmLC9ITyMEzs0WZzXduk-kHUih917nlYo',
-      title: 'Emblemas de Opala para envio prioritário a Curitiba-PR.',
-      tag: '#OpalaComodoro #Diplomata',
+      image: '/assets/aistudio/chevette-corsa.png',
+      title: 'Chevette DL verde clássico e Corsa reunidos na comunidade de apaixonados.',
+      tag: '#Chevette #Corsa #GMClube #Restauração',
     },
   ];
 
@@ -35,7 +35,7 @@ export const InstagramAndLocation: React.FC = () => {
               <div className="flex items-center gap-1.5 text-[#7e5700]">
                 <Camera className="w-4 h-4" />
                 <span className="text-[11px] font-mono uppercase font-bold tracking-wider">
-                  Comunidade &amp; Projetos
+                  Comunidade &amp; Projetos Reais
                 </span>
               </div>
               <h2 className="font-barlow text-3xl sm:text-4xl font-bold uppercase text-[#000d36] tracking-wide">
@@ -65,6 +65,12 @@ export const InstagramAndLocation: React.FC = () => {
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (!target.src.includes('carrao2.png')) {
+                      target.src = '/assets/aistudio/carrao2.png';
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-[#000d36]/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center text-white">
                   <Heart className="w-7 h-7 text-[#ffb61d] fill-current mb-2" />
@@ -98,8 +104,8 @@ export const InstagramAndLocation: React.FC = () => {
               </div>
 
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Venha tomar um café conosco, conferir os acabamentos no balcão e testar peças de
-                restauração com nossa equipe técnica de pista.
+                Conheça nosso balcão e estoque físico em Cascavel. Venha conferir os acabamentos
+                de perto, testar encaixes e consultar peças de restauração com nossa equipe especializada.
               </p>
 
               <div className="flex flex-col gap-2.5 text-xs text-[#1a1b21]">
@@ -142,26 +148,30 @@ export const InstagramAndLocation: React.FC = () => {
               </div>
             </div>
 
-            {/* Mapa Estilizado (7 cols) */}
+            {/* Fachada Real & Informações da Loja (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="w-full h-80 rounded-xl overflow-hidden shadow-inner bg-[#ededf4] relative border border-gray-200">
-                {/* Visual Map Backdrop */}
-                <div className="absolute inset-0 bg-[radial-gradient(#0e2257_1px,transparent_1px)] [background-size:16px_16px] opacity-15"></div>
-
-                <div className="absolute inset-0 flex items-center justify-center p-4 bg-[#e8e7ef]/60 backdrop-blur-[2px]">
-                  <div className="bg-white p-5 rounded-xl shadow-xl flex items-center gap-4 max-w-sm border border-gray-200">
-                    <div className="w-12 h-12 rounded-full bg-[#000d36] flex items-center justify-center text-[#ffb61d] shrink-0 shadow-md">
-                      <Store className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-barlow text-xl text-[#000d36] uppercase font-bold">
-                        Marinho Acessórios
-                      </h4>
-                      <p className="text-xs text-gray-500">R. Erechim, 390 - Cascavel, Paraná</p>
-                      <div className="flex items-center gap-1 text-[11px] text-[#00a34a] font-semibold mt-1">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                        Estacionamento Próprio no Local
+              <div className="w-full h-80 rounded-xl overflow-hidden shadow-md bg-[#000d36] relative border border-gray-200 group">
+                <img
+                  src="/assets/aistudio/frente-loja.png"
+                  alt="Fachada Marinho Acessórios Cascavel PR"
+                  className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000d36]/90 via-[#000d36]/30 to-transparent flex flex-col justify-end p-5">
+                  <div className="bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg flex items-center justify-between gap-4 max-w-md border border-white/40">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-[#000d36] flex items-center justify-center text-[#ffb61d] shrink-0 shadow-sm">
+                        <Store className="w-5 h-5" />
                       </div>
+                      <div>
+                        <h4 className="font-barlow text-base text-[#000d36] uppercase font-bold leading-tight">
+                          Marinho Acessórios
+                        </h4>
+                        <p className="text-[11px] text-gray-600">R. Erechim, 390 - Cascavel, Paraná</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1 text-[11px] text-[#00a34a] font-bold shrink-0">
+                      <CheckCircle2 className="w-4 h-4" />
+                      <span>Loja Física</span>
                     </div>
                   </div>
                 </div>
@@ -173,3 +183,4 @@ export const InstagramAndLocation: React.FC = () => {
     </section>
   );
 };
+

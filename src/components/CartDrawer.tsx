@@ -111,6 +111,9 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-contain"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/assets/products/foto-em-breve.svg';
+                      }}
                     />
                   </div>
                   <div className="flex-1 flex flex-col justify-between">

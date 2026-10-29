@@ -23,11 +23,11 @@ export const VehicleSelector: React.FC<VehicleSelectorProps> = ({
             </h2>
           </div>
           <p className="text-xs text-gray-500">
-            Selecione o chassi para carregar instantaneamente o acervo compatível
+            Selecione o chassi para carregar instantaneamente as peças compatíveis
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2.5">
           {VEHICLE_LIST.map((vehicle) => {
             const isSelected = selectedVehicle === vehicle.name;
             return (
@@ -41,23 +41,17 @@ export const VehicleSelector: React.FC<VehicleSelectorProps> = ({
                 }`}
               >
                 <div
-                  className={`w-16 h-16 rounded-full flex items-center justify-center transition-colors mb-2 ${
+                  className={`w-16 h-16 rounded-full flex items-center justify-center transition-all mb-2 p-1.5 ${
                     isSelected
-                      ? 'bg-white/20'
-                      : 'bg-[#eaeff5] group-hover:bg-[#031438]'
+                      ? 'bg-white/15 ring-2 ring-[#fab800]'
+                      : 'bg-[#eaeff5] group-hover:bg-[#f8fafd] group-hover:shadow-inner'
                   }`}
                 >
                   <img
                     src={vehicle.image}
                     alt={vehicle.label || vehicle.name}
-                    className={`w-12 h-12 object-contain transition-all ${
-                      isSelected
-                        ? 'brightness-200 invert'
-                        : 'group-hover:invert group-hover:brightness-200'
-                    }`}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLElement).style.display = 'none';
-                    }}
+                    className="w-13 h-13 object-contain group-hover:scale-110 transition-transform duration-200"
+                    loading="lazy"
                   />
                 </div>
                 <span

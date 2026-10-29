@@ -51,7 +51,7 @@ export const InfoModals: React.FC<InfoModalProps> = ({ type, onClose }) => {
               <p>
                 A <strong>Marinho Acessórios</strong> nasceu da paixão genuína por veículos que
                 marcaram época nas ruas e pistas do Brasil. Especializada na linha de acabamentos
-                originais e reproduções técnicas de padrão fabril para{' '}
+                originais para{' '}
                 <strong>Chevette, Opala, Caravan, Gol Quadrado, Fusca, Corcel</strong> e outros
                 ícones nacionais.
               </p>
@@ -59,7 +59,7 @@ export const InfoModals: React.FC<InfoModalProps> = ({ type, onClose }) => {
               <p>
                 Nosso compromisso não é apenas vender uma peça, mas garantir que o seu projeto de
                 restauro mantenha o alinhamento, a tonalidade de época e o encaixe perfeito. Todos os
-                nossos lotes passam por conferência dimensional antes de entrar no acervo.
+                nossos lotes passam por conferência dimensional antes de entrar no catálogo.
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2 text-xs">

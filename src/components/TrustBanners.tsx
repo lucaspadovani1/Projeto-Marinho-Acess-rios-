@@ -52,7 +52,7 @@ export const TrustBanners: React.FC = () => {
           </div>
         </div>
 
-        {/* Card Especialista WhatsApp */}
+        {/* Card Fale Conosco WhatsApp */}
         <div className="bg-gradient-to-br from-[#031438] via-[#051c4d] to-[#08225e] text-white p-7 sm:p-8 rounded-2xl shadow-xs flex flex-col justify-between relative overflow-hidden border border-white/10">
           <div className="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-[#1e3a8a]/30 pointer-events-none blur-2xl"></div>
 
@@ -60,7 +60,7 @@ export const TrustBanners: React.FC = () => {
             <div className="flex items-center gap-2 text-[#25D366] font-bold">
               <MessageCircle className="w-6 h-6" />
               <span className="font-barlow text-lg uppercase tracking-wider">
-                Plantão Técnico do Antigomobilista
+                Atendimento Técnico &amp; Suporte
               </span>
             </div>
 
@@ -76,7 +76,7 @@ export const TrustBanners: React.FC = () => {
             <div className="flex items-center gap-4 pt-1 font-mono text-xs text-[#dbe1ff] flex-wrap">
               <span className="flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
-                Resposta em minutos
+                Resposta rápida
               </span>
               <span className="flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5 text-[#fab800]" />
@@ -93,7 +93,7 @@ export const TrustBanners: React.FC = () => {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fa855] text-white font-bold text-xs uppercase px-6 py-3 rounded-lg shadow-sm transition-colors tracking-wider"
             >
               <MessageCircle className="w-4 h-4" />
-              Falar com Especialista Técnico
+              Fale conosco no WhatsApp
             </a>
           </div>
         </div>

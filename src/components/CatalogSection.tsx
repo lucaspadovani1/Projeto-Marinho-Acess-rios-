@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Product, FilterState } from '../types';
-import { Heart, ShoppingBag, Eye, Store, Filter, RotateCcw, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Heart, ShoppingBag, Eye, Store, Filter, RotateCcw, ChevronLeft, ChevronRight, X, MessageCircle } from 'lucide-react';
 
 interface CatalogSectionProps {
   products: Product[];
@@ -292,7 +292,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                   Tipo de Veículo
                 </span>
                 <div className="flex flex-col gap-1 text-xs text-[#1a1b21]">
-                  {(['Carros', 'Motos', 'Utilitários / Pickups'] as const).map((t) => (
+                  {(['Carros', 'Utilitários / Pickups'] as const).map((t) => (
                     <label
                       key={t}
                       className="flex items-center justify-between cursor-pointer p-1 rounded hover:bg-gray-50"
@@ -369,6 +369,9 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                     { label: 'Fusca', val: 'Fusca' },
                     { label: 'Saveiro', val: 'Saveiro' },
                     { label: 'Corcel', val: 'Corcel' },
+                    { label: 'Celta/Corsa', val: 'Celta / Corsa' },
+                    { label: 'D10', val: 'D10' },
+                    { label: 'Strada', val: 'Strada' },
                   ].map((m) => {
                     const isSelected = filterState.vehicle === m.val;
                     return (
@@ -500,7 +503,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                   Disponibilidade
                 </span>
                 <div className="flex flex-col gap-1 text-xs text-[#1a1b21]">
-                  {(['Em Estoque', 'Últimas Unidades', 'Sob Encomenda'] as const).map((avail) => (
+                  {(['Em Estoque', 'Últimas Unidades', 'Sob Encomenda', 'Sem Estoque'] as const).map((avail) => (
                     <label key={avail} className="flex items-center gap-2 cursor-pointer p-0.5">
                       <input
                         type="checkbox"
@@ -562,6 +565,12 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                           alt={prod.name}
                           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
+                          onError={(e) => {
+                            const target = e.currentTarget as HTMLImageElement;
+                            if (!target.src.includes('foto-em-breve.svg')) {
+                              target.src = '/assets/products/foto-em-breve.svg';
+                            }
+                          }}
                         />
                         <span className="absolute top-2 left-2 bg-[#031438] text-[#fab800] font-mono text-[10px] uppercase px-2 py-0.5 rounded font-bold shadow-xs">
                           {prod.badge}
@@ -583,8 +592,14 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                           <span className="font-barlow text-xs uppercase tracking-wide text-[#031438] font-bold truncate pr-1">
                             {prod.vehicleLine}
                           </span>
-                          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#66ff8e]/30 text-[#002109] shrink-0">
-                            {prod.stockType}
+                          <span
+                            className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold shrink-0 ${
+                              !prod.inStock || prod.stockType === 'Sem Estoque'
+                                ? 'bg-red-50 text-red-700 border border-red-200'
+                                : 'bg-[#66ff8e]/30 text-[#002109]'
+                            }`}
+                          >
+                            {!prod.inStock ? 'Sem Estoque' : prod.stockType}
                           </span>
                         </div>
 
@@ -610,17 +625,36 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                       <div className="pt-2 mt-auto flex flex-col gap-2 border-t border-gray-100">
                         <div className="flex items-baseline justify-between">
                           <div className="flex flex-col">
-                            <span className="font-mono text-[10px] text-gray-400">
-                              À vista no Pix ou ML
-                            </span>
-                            <span className="font-barlow text-2xl font-bold text-[#031438]">
-                              R$ {prod.price.toFixed(2).replace('.', ',')}
-                            </span>
+                            {prod.inStock && prod.price > 0 ? (
+                              <>
+                                <span className="font-mono text-[10px] text-gray-400">
+                                  À vista no Pix ou ML
+                                </span>
+                                <span className="font-barlow text-2xl font-bold text-[#031438]">
+                                  R$ {prod.price.toFixed(2).replace('.', ',')}
+                                </span>
+                              </>
+                            ) : (
+                              <>
+                                <span className="font-mono text-[10px] text-gray-400">
+                                  Disponibilidade
+                                </span>
+                                <span className="font-barlow text-xl font-bold text-gray-500">
+                                  Sob Consulta
+                                </span>
+                              </>
+                            )}
                           </div>
-                          <span className="text-[11px] text-gray-500">
-                            {prod.installments}x de R${' '}
-                            {prod.installmentValue.toFixed(2).replace('.', ',')}
-                          </span>
+                          {prod.inStock && prod.price > 0 ? (
+                            <span className="text-[11px] text-gray-500">
+                              {prod.installments}x de R${' '}
+                              {prod.installmentValue.toFixed(2).replace('.', ',')}
+                            </span>
+                          ) : (
+                            <span className="text-[10px] text-amber-700 font-mono bg-amber-50 px-1.5 py-0.5 rounded">
+                              Sem estoque
+                            </span>
+                          )}
                         </div>
 
                         <div className="grid grid-cols-2 gap-1.5 pt-1">
@@ -632,10 +666,11 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                           </button>
 
                           <a
-                            href="https://www.mercadolivre.com.br/pagina/becamecomercial1765"
+                            href={prod.mlUrl || "https://www.mercadolivre.com.br/pagina/becamecomercial1765"}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-[#fab800] hover:bg-[#f5a600] text-[#031438] font-bold text-xs py-2 rounded-lg transition-colors flex items-center justify-center gap-1 shadow-xs"
+                            title={`Ver anúncio no Mercado Livre`}
                           >
                             <Store className="w-3.5 h-3.5" /> Mercado Livre
                           </a>
@@ -696,6 +731,52 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
               </div>
             )}
           </main>
+        </div>
+
+        {/* BANNER WHATSAPP: "NÃO ACHOU O QUE PROCURA?" */}
+        <div className="mt-8 bg-gradient-to-r from-[#000d36] via-[#04163d] to-[#000d36] rounded-2xl p-6 sm:p-8 text-white shadow-md border border-[#fab800]/30 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="absolute -left-16 -bottom-16 w-52 h-52 rounded-full bg-[#fab800]/10 pointer-events-none blur-3xl"></div>
+          <div className="absolute -right-16 -top-16 w-52 h-52 rounded-full bg-[#25D366]/15 pointer-events-none blur-3xl"></div>
+
+          <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 z-10 max-w-2xl">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center shrink-0">
+              <MessageCircle className="w-8 h-8 text-[#25D366]" />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className="font-mono text-xs text-[#fab800] uppercase font-bold tracking-wider flex items-center justify-center sm:justify-start gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
+                ATENDIMENTO TÉCNICO ESPECIALIZADO
+              </span>
+              <h3 className="font-barlow text-2xl sm:text-3xl font-bold uppercase text-white leading-tight">
+                Não achou a peça que você procura?
+              </h3>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Nosso estoque físico conta com <strong className="text-white">+15.000 itens</strong> para restauração e reposição de carros antigos. Mande uma foto ou a descrição da peça que localizamos para você!
+              </p>
+              <div className="flex items-center justify-center sm:justify-start gap-3 text-xs font-mono text-gray-400 mt-1 flex-wrap">
+                <span>Cascavel - PR</span>
+                <span>•</span>
+                <span>Atendimento imediato</span>
+                <span>•</span>
+                <span className="text-[#fab800] font-semibold">(45) 3037-2929</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="z-10 w-full sm:w-auto shrink-0 flex flex-col items-center sm:items-end gap-2">
+            <a
+              href="https://api.whatsapp.com/send?phone=554530372929&text=Ol%C3%A1%2C%20equipe%20Marinho%20Acess%C3%B3rios!%20Procurei%20no%20site%20mas%20n%C3%A3o%20encontrei%20a%20pe%C3%A7a%20que%20preciso.%20Voc%C3%AAs%20poderiam%20me%20ajudar%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1fa855] text-white font-bold text-sm uppercase px-8 py-4 rounded-xl shadow-xl transition-all transform hover:scale-[1.02] tracking-wider cursor-pointer"
+            >
+              <MessageCircle className="w-5 h-5 fill-current" />
+              <span>Chamar no WhatsApp</span>
+            </a>
+            <span className="text-[11px] text-gray-400 font-mono">
+              (45) 3037-2929 • Resposta rápida de segunda a sábado
+            </span>
+          </div>
         </div>
       </div>
     </section>

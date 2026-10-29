@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="100%" height="100%" fill="none">
+  <!-- Saveiro Quadrada Silhouette Icon -->
+  <g stroke="#031438" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#031438">
+    <!-- Body Outline (Pickup truck with open bed) -->
+    <path d="M 18 80 L 32 80 C 35 68 47 60 60 60 C 73 60 85 68 88 80 L 132 80 C 135 68 147 60 160 60 C 173 60 185 68 188 80 L 192 80 C 195 78 196 72 194 65 L 126 65 L 118 44 L 84 44 L 56 64 L 16 66 C 12 67 11 72 11 76 C 11 80 14 80 18 80 Z" />
+    
+    <!-- Cabin Window -->
+    <path d="M 64 62 L 86 48 L 112 48 L 112 62 Z" fill="#fab800" stroke="#fab800" stroke-width="1.5" />
+    
+    <!-- Caçamba Bed Rail (Friso da caçamba) -->
+    <line x1="122" y1="64" x2="192" y2="64" stroke="#fab800" stroke-width="2.5" />
+    
+    <!-- Wheels -->
+    <circle cx="60" cy="80" r="15" fill="#1e293b" stroke="#fab800" stroke-width="3"/>
+    <circle cx="60" cy="80" r="6" fill="#fab800"/>
+    <circle cx="160" cy="80" r="15" fill="#1e293b" stroke="#fab800" stroke-width="3"/>
+    <circle cx="160" cy="80" r="6" fill="#fab800"/>
+    
+    <!-- Bumper & details -->
+    <line x1="12" y1="71" x2="16" y2="71" stroke="#fab800" stroke-width="2.5" />
+    <line x1="188" y1="72" x2="192" y2="72" stroke="#e11d48" stroke-width="2.5" />
+    <line x1="88" y1="68" x2="132" y2="68" stroke="#cbd5e1" stroke-width="2" />
+  </g>
+</svg>
