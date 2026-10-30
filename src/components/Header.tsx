@@ -44,11 +44,11 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="max-w-[80rem] mx-auto flex items-center justify-between text-[#dbe1ff]/90">
           <div className="flex items-center gap-4 flex-wrap">
             <a
-              href="tel:4530372929"
+              href="tel:45999277822"
               className="flex items-center gap-1.5 hover:text-[#fab800] transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-[#fab800]" />
-              <span className="font-medium">(45) 3037-2929</span>
+              <span className="font-medium">(45) 99927-7822</span>
             </a>
             <span className="hidden sm:inline-block opacity-40">|</span>
             <span className="hidden sm:flex items-center gap-1.5 opacity-80">
@@ -236,13 +236,13 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           ))}
           <a
-            href="https://api.whatsapp.com/send?phone=554530372929"
+            href="https://api.whatsapp.com/send?phone=5545999277822"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 bg-[#25D366] text-white py-2 px-3 rounded text-center text-sm font-bold flex items-center justify-center gap-2"
           >
             <Phone className="w-4 h-4" />
-            Plantão WhatsApp (45) 3037-2929
+            Plantão WhatsApp (45) 99927-7822
           </a>
         </div>
       )}

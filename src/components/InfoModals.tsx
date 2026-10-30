@@ -90,7 +90,7 @@ export const InfoModals: React.FC<InfoModalProps> = ({ type, onClose }) => {
 
               <div className="flex flex-col gap-3">
                 <a
-                  href="https://api.whatsapp.com/send?phone=554530372929"
+                  href="https://api.whatsapp.com/send?phone=5545999277822"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-colors"
@@ -98,7 +98,7 @@ export const InfoModals: React.FC<InfoModalProps> = ({ type, onClose }) => {
                   <Phone className="w-5 h-5 text-[#25D366]" />
                   <div>
                     <strong className="block text-[#002109]">Plantão WhatsApp Oficial</strong>
-                    <span className="text-xs text-gray-600">(45) 3037-2929 — Resposta rápida</span>
+                    <span className="text-xs text-gray-600">(45) 99927-7822 — Resposta rápida</span>
                   </div>
                 </a>
 
@@ -156,7 +156,7 @@ export const InfoModals: React.FC<InfoModalProps> = ({ type, onClose }) => {
                 </a>
 
                 <a
-                  href="https://api.whatsapp.com/send?phone=554530372929&text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20o%20rastreio%20do%20meu%20pedido."
+                  href="https://api.whatsapp.com/send?phone=5545999277822&text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20o%20rastreio%20do%20meu%20pedido."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#000d36] hover:bg-[#0e2257] text-white font-semibold text-xs uppercase px-5 py-3 rounded-xl shadow-xs flex items-center justify-center gap-1.5"

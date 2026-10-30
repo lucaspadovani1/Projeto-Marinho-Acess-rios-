@@ -66,13 +66,13 @@ export const Hero: React.FC<HeroProps> = ({ onApplyFitment, onExploreCatalog }) 
               </button>
 
               <a
-                href="https://api.whatsapp.com/send?phone=554530372929&text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20uma%20pe%C3%A7a%20para%20meu%20cl%C3%A1ssico."
+                href="https://api.whatsapp.com/send?phone=5545999277822&text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20uma%20pe%C3%A7a%20para%20meu%20cl%C3%A1ssico."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#020d26] hover:bg-[#031438] text-white font-semibold text-sm px-5 py-3 rounded-lg flex items-center gap-2 shadow-sm transition-colors border border-white/15"
               >
                 <span className="material-symbols-outlined text-[20px] text-[#25D366]">chat</span>
-                WhatsApp (45) 3037-2929
+                WhatsApp (45) 99927-7822
               </a>
             </div>
           </div>

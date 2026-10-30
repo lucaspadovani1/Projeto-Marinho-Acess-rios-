@@ -55,7 +55,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       `Olá, Marinho Acessórios! Gostaria de fechar meu pedido de peças para restauração:\n\n${itemsList}\n\nSubtotal: R$ ${subtotal.toFixed(2)}${shippingCalculated ? `\nFrete Estimado (CEP ${cep}): R$ ${shippingCost.toFixed(2)}` : ''}\nTotal: R$ ${total.toFixed(2)}\n\nPoderiam me enviar os dados para pagamento (Pix) e confirmação de envio?`
     );
 
-    window.open(`https://api.whatsapp.com/send?phone=554530372929&text=${msg}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=5545999277822&text=${msg}`, '_blank');
   };
 
   return (

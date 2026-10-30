@@ -80,14 +80,14 @@ export const TrustBanners: React.FC = () => {
               </span>
               <span className="flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5 text-[#fab800]" />
-                Cascavel-PR: (45) 3037-2929
+                Cascavel-PR: (45) 99927-7822
               </span>
             </div>
           </div>
 
           <div className="pt-6 relative z-10">
             <a
-              href="https://api.whatsapp.com/send?phone=554530372929&text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20t%C3%A9cnica%20sobre%20compatibilidade%20de%20pe%C3%A7as."
+              href="https://api.whatsapp.com/send?phone=5545999277822&text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20t%C3%A9cnica%20sobre%20compatibilidade%20de%20pe%C3%A7as."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fa855] text-white font-bold text-xs uppercase px-6 py-3 rounded-lg shadow-sm transition-colors tracking-wider"

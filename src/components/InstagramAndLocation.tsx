@@ -122,7 +122,7 @@ export const InstagramAndLocation: React.FC = () => {
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-4 h-4 text-[#ffb61d] shrink-0" />
                   <div>
-                    <strong className="text-[#000d36]">Telefone:</strong> (45) 3037-2929
+                    <strong className="text-[#000d36]">Telefone / WhatsApp:</strong> (45) 99927-7822
                   </div>
                 </div>
 

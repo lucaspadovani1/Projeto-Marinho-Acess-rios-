@@ -172,7 +172,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 </button>
               ) : (
                 <a
-                  href={`https://api.whatsapp.com/send?phone=554530372929&text=${encodeURIComponent(
+                  href={`https://api.whatsapp.com/send?phone=5545999277822&text=${encodeURIComponent(
                     `Olá, equipe Marinho! Gostaria de consultar a cotação/previsão para a peça sem estoque: ${product.name} (SKU: ${product.sku})`
                   )}`}
                   target="_blank"
@@ -197,7 +197,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
             {/* Direct WhatsApp Specialist Question */}
             <a
-              href={`https://api.whatsapp.com/send?phone=554530372929&text=${whatsappMessage}`}
+              href={`https://api.whatsapp.com/send?phone=5545999277822&text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#005322] font-semibold py-2 px-3 rounded-lg border border-[#25D366]/30 flex items-center justify-center gap-2 text-xs transition-colors"

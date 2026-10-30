@@ -251,7 +251,7 @@ export default function App() {
 
       {/* Floating Action WhatsApp Button */}
       <a
-        href="https://api.whatsapp.com/send?phone=554530372929&text=Ol%C3%A1%2C%20estou%20no%20site%20da%20Marinho%20Acess%C3%B3rios%20e%20gostaria%20de%20consultar%20uma%20pe%C3%A7a."
+        href="https://api.whatsapp.com/send?phone=5545999277822&text=Ol%C3%A1%2C%20estou%20no%20site%20da%20Marinho%20Acess%C3%B3rios%20e%20gostaria%20de%20consultar%20uma%20pe%C3%A7a."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#25D366] hover:bg-[#1fa855] text-white px-4 py-3 rounded-full shadow-2xl transition-all transform hover:scale-105 group border-2 border-white"

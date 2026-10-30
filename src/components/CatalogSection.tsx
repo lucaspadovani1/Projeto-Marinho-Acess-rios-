@@ -758,14 +758,14 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                 <span>•</span>
                 <span>Atendimento imediato</span>
                 <span>•</span>
-                <span className="text-[#fab800] font-semibold">(45) 3037-2929</span>
+                <span className="text-[#fab800] font-semibold">(45) 99927-7822</span>
               </div>
             </div>
           </div>
 
           <div className="z-10 w-full sm:w-auto shrink-0 flex flex-col items-center sm:items-end gap-2">
             <a
-              href="https://api.whatsapp.com/send?phone=554530372929&text=Ol%C3%A1%2C%20equipe%20Marinho%20Acess%C3%B3rios!%20Procurei%20no%20site%20mas%20n%C3%A3o%20encontrei%20a%20pe%C3%A7a%20que%20preciso.%20Voc%C3%AAs%20poderiam%20me%20ajudar%3F"
+              href="https://api.whatsapp.com/send?phone=5545999277822&text=Ol%C3%A1%2C%20equipe%20Marinho%20Acess%C3%B3rios!%20Procurei%20no%20site%20mas%20n%C3%A3o%20encontrei%20a%20pe%C3%A7a%20que%20preciso.%20Voc%C3%AAs%20poderiam%20me%20ajudar%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1fa855] text-white font-bold text-sm uppercase px-8 py-4 rounded-xl shadow-xl transition-all transform hover:scale-[1.02] tracking-wider cursor-pointer"
@@ -774,7 +774,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
               <span>Chamar no WhatsApp</span>
             </a>
             <span className="text-[11px] text-gray-400 font-mono">
-              (45) 3037-2929 • Resposta rápida de segunda a sábado
+              (45) 99927-7822 • Resposta rápida de segunda a sábado
             </span>
           </div>
         </div>

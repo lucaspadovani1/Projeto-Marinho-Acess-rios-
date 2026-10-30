@@ -96,19 +96,19 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNavTab }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#fab800] shrink-0" />
-                <a href="tel:4530372929" className="hover:underline">
-                  (45) 3037-2929
+                <a href="tel:45999277822" className="hover:underline">
+                  (45) 99927-7822
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
                 <a
-                  href="https://api.whatsapp.com/send?phone=554530372929"
+                  href="https://api.whatsapp.com/send?phone=5545999277822"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
-                  WhatsApp: +55 (45) 3037-2929
+                  WhatsApp: +55 (45) 99927-7822
                 </a>
               </div>
               <div className="flex items-center gap-2">
